@@ -191,7 +191,7 @@ def update_early_stop_state(val_loss, best_val_loss, wait, weights, best_weights
     # TODO: Update best weights and patience counter; signal stop when val loss stalls...
     if(val_loss<best_val_loss):
         best_val_loss=val_loss
-        best_weights= weights
+        best_weights= weights.copy()
         wait=0
     else:
         wait+=1
