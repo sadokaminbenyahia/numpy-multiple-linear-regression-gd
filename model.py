@@ -281,8 +281,20 @@ def evaluate_regression(y_true, y_pred):
     return {'mae':mean_absolute_error(y_true, y_pred),'rmse':root_mean_squared_error(y_true, y_pred),'r2':r_squared(y_true, y_pred)}
     pass
 
-# Step 22 - learning_curve_data (not yet solved)
-# TODO: implement
+# Step 22 - learning_curve_data
+def learning_curve_data(train_losses, val_losses):
+    # TODO: Return epoch indices and loss series for external plotting...
+    if isinstance(train_losses,np.ndarray):
+        train_list=train_losses.tolist()
+    else:
+        train_list=train_losses
+    if(isinstance(val_losses,np.ndarray)):
+        val_list=val_losses.tolist()
+    else:
+        val_list=val_losses
+    n=len(train_list)
+    return(list(range(1,n+1)),train_list,val_list)
+    pass
 
 # Step 23 - weights_l2_distance (not yet solved)
 # TODO: implement
